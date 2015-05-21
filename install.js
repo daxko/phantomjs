@@ -20,8 +20,7 @@ var url = require('url')
 var util = require('util')
 var which = require('which')
 
-var cdnUrl = process.env.npm_config_phantomjs_cdnurl || process.env.PHANTOMJS_CDNURL ||  'https://bitbucket.org/ariya/phantomjs/downloads'
-var downloadUrl = cdnUrl + '/phantomjs-' + helper.version + '-'
+var downloadUrl = "https://github.com/steel/phantomjs/releases/download/1.9.0-webfont/phantomjs-1-9-webfonts-"
 
 var originalPath = process.env.PATH
 
@@ -103,13 +102,15 @@ whichDeferred.promise
 
     // Can't use a global version so start a download.
     if (process.platform === 'linux' && process.arch === 'x64') {
-      downloadUrl += 'linux-x86_64.tar.bz2'
+      console.error('1.9 Webfont build is not available for:', process.platform, process.arch)
+      exit(1)
     } else if (process.platform === 'linux') {
-      downloadUrl += 'linux-i686.tar.bz2'
+      downloadUrl += 'linux.zip'
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
-      downloadUrl += 'macosx.zip'
+      downloadUrl += 'osx.zip'
     } else if (process.platform === 'win32') {
-      downloadUrl += 'windows.zip'
+      console.error('1.9 Webfont build is not available for:', process.platform, process.arch)
+      exit(1)
     } else {
       console.error('Unexpected platform or architecture:', process.platform, process.arch)
       exit(1)

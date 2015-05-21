@@ -1,6 +1,6 @@
 {
-  "name": "phantomjs",
-  "version": "1.9.17",
+  "name": "phantomjs-webfont",
+  "version": "1.9.0",
   "keywords": [
     "phantomjs",
     "headless",
