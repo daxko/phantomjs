@@ -1,16 +1,17 @@
 {
-  "name": "phantomjs",
-  "version": "1.9.17",
+  "name": "phantomjs-webfonts",
+  "version": "1.9.0",
   "keywords": [
     "phantomjs",
     "headless",
-    "webkit"
+    "webkit",
+    "webfonts"
   ],
   "description": "Headless WebKit with JS API",
-  "homepage": "https://github.com/Medium/phantomjs",
+  "homepage": "https://github.com/steel/phantomjs/tree/1.9.0-webfont",
   "repository": {
     "type": "git",
-    "url": "git://github.com/Medium/phantomjs.git"
+    "url": "git://github.com/steel/phantomjs.git"
   },
   "licenses": [
     {
@@ -25,9 +26,8 @@
   },
   "maintainers": [
     {
-      "name": "Dan Pupius",
-      "email": "dan@obvious.com",
-      "web": "http://pupius.co.uk/"
+      "name": "Steel Fu",
+      "email": "steelfu@gmail.com"
     }
   ],
   "main": "lib/phantomjs",
