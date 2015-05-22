@@ -102,7 +102,11 @@ whichDeferred.promise
 
     // Can't use a global version so start a download.
     if (process.platform === 'linux' && process.arch === 'x64') {
-      console.error('1.9 Webfont build is not available for:', process.platform, process.arch)
+      console.log('1.9 Webfont build is not available for:', process.platform, process.arch);
+
+      downloadUrl = "https://phantomjs.googlecode.com/files/phantomjs-1.9.1-linux-x86_64.tar.bz2";
+      console.log('Downloading original 1.9.1 build instead:', downloadUrl);
+
       exit(1)
     } else if (process.platform === 'linux') {
       downloadUrl += 'linux.zip'
