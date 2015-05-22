@@ -104,10 +104,8 @@ whichDeferred.promise
     if (process.platform === 'linux' && process.arch === 'x64') {
       console.log('1.9 Webfont build is not available for:', process.platform, process.arch);
 
-      downloadUrl = "https://phantomjs.googlecode.com/files/phantomjs-1.9.1-linux-x86_64.tar.bz2";
-      console.log('Downloading original 1.9.1 build instead:', downloadUrl);
-
-      exit(1)
+      downloadUrl = "https://phantomjs.googlecode.com/files/phantomjs-1.9.0-linux-x86_64.tar.bz2";
+      console.log('Downloading original 1.9.0 build instead:', downloadUrl);
     } else if (process.platform === 'linux') {
       downloadUrl += 'linux.zip'
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
