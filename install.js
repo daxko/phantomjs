@@ -20,7 +20,7 @@ var url = require('url')
 var util = require('util')
 var which = require('which')
 
-var downloadUrl = "https://github.com/steel/phantomjs/releases/download/1.9.0-webfont/phantomjs-1.9.0-webfonts-"
+var downloadUrl = "https://github.com/daxko/phantomjs/releases/download/1.9.0-webfont/phantomjs-1.9.0-";
 
 var originalPath = process.env.PATH
 
@@ -104,18 +104,17 @@ whichDeferred.promise
     if (process.platform === 'linux' && process.arch === 'x64') {
       console.log('1.9 Webfont build is not available for:', process.platform, process.arch);
 
-      downloadUrl = "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/phantomjs/phantomjs-1.9.0-linux-x86_64.tar.bz2";
+      downloadUrl += 'linux-x86_64.tar.bz2';
       console.log('Downloading original 1.9.0 build instead:', downloadUrl);
     } else if (process.platform === 'linux') {
-      downloadUrl += 'linux.zip'
+      downloadUrl += 'linux-i686.tar.bz2';
     } else if (process.platform === 'darwin' || process.platform === 'openbsd' || process.platform === 'freebsd') {
-      downloadUrl += 'osx.zip'
+      downloadUrl += 'macosx.zip';
     } else if (process.platform === 'win32') {
-      console.error('1.9 Webfont build is not available for:', process.platform, process.arch)
-      exit(1)
+      downloadUrl += 'windows.zip';
     } else {
-      console.error('Unexpected platform or architecture:', process.platform, process.arch)
-      exit(1)
+      console.error('Unexpected platform or architecture:', process.platform, process.arch);
+      exit(1);
     }
 
     var fileName = downloadUrl.split('/').pop()
